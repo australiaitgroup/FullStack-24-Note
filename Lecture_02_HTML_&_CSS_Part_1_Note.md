@@ -78,7 +78,32 @@ HTML 中，element 是由 tag + content 定义的。例如：
 元素可以按照在网页中的显示方式分为：
 
 - block elements
+  - 特点
+    - 占据一整行：块级元素总是从新的一行开始，独占一行。
+    - 默认宽度：宽度默认扩展到父容器的宽度。
+    - 可以包含块级元素和行内元素：可以嵌套其他块级元素或行内元素。
+    - 可设置宽度、高度、边距和内边距：可以通过 CSS 轻松设置 width、height、margin 和 padding。
+  - 常见的块级元素  
+    `<div>：`通用容器。  
+    `<p>：`段落。  
+    `<h1> ~ <h6>：`标题。  
+    `<ul> 和 <ol>：`无序和有序列表。  
+    `<li>：`列表项。  
+    ` <section>、<article>、<header>、<footer>：`语义化 HTML5 元素。  
 - inline elements
+  - 特点
+    - 不占据一整行：行内元素不会从新的一行开始，多个行内元素会排列在同一行。
+    - 宽高由内容决定：行内元素的宽度和高度由其内容决定，无法直接设置宽度和高度。
+    - 只能包含文本或其他行内元素：行内元素不能嵌套块级元素。
+    - 可设置内边距和边框：虽然可以设置 `padding` 和 `border`，但通常不会影响周围布局。
+  - 常见的行内元素  
+    `<span>：`通用的行内容容器。  
+    `<a>：`超链接。  
+    `<strong> 和 <b>：`加粗文本。  
+    `<em> 和 <i>：`强调或斜体文本。  
+    `<img>：`图片。  
+    `<label>：`表单标签。  
+    `<button>：`按钮。  
 
 > 元素的显示方式可以通过 css 进行修改
 
@@ -109,6 +134,7 @@ Example
 </html>
 ```
 
+`<head>` 标签：其中的内容不会展现在页面上，而是包含文件的metadata。
 `<head>` 标签中一般要有的内容：
 
 ```html
@@ -120,7 +146,7 @@ Example
   <meta name="keywords" content="测试关键字" />
   <!--注释: Define keywords for search engines: -->
   <meta name="description" content="测试关键字" />
-  <!--注释： Define a description of your web page: -->
+  <!--注释： Define a description of your web page: for the snippet in seatch results -->
   <title>Document</title>
 </head>
 ```
@@ -369,8 +395,10 @@ Example:
 
 form 的属性：
 
-- method:
-- action:
+- method: 指定数据提交方式：GET 或 POST。
+  - GET：将数据附加到 URL 后，适用于查询操作。
+  - POST：将数据放在 http 请求体中，适用于大量信息。
+- action: 指定表单数据提交到的目标地址（URL）。
 
 表单基本结构：
 
