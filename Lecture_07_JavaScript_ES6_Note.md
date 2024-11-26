@@ -46,6 +46,7 @@ JavaScript:
 - ECMAScript 6（ES6）于 2015 年发布。它引入了许多新的语法特性、标准库和改进，以提高开发人员的生产力和代码的可维护性。当前主流浏览器已全面兼容 ES6。ES6 引入的一些重要特性包括箭头函数、模板字符串、解构赋值、类、let 和 const 等变量声明方式、以及 Promise 等异步编程的改进。
 
 - ES6 的兼容性查询工具：Can I Use https://caniuse.com/
+- 老师推荐参考书：https://es6.ruanyifeng.com/
 
 ## 4. 开发环境搭建
 
