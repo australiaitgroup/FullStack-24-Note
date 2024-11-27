@@ -60,6 +60,39 @@ Three Ways to Insert CSS
 - Internal CSS：直接在 HTML 文件的`<head>`中使用`<style>`标签。
   ```html
   <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Internal CSS 示例</title>
+      <style>
+          /* 内部CSS样式 */
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f0f8ff;
+          }
+          h1 {
+              color: #333;
+              text-align: center;
+          }
+          p {
+              font-size: 16px;
+              line-height: 1.5;
+              color: #555;
+              padding: 10px;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>这是一个内部CSS的示例</h1>
+      <p>内部CSS样式使用<style>标签定义在HTML文档的<head>部分。它适用于较小的项目或不需要外部样式表的页面。</p>
+  </body>
+  </html>
+  ```
+  > 提示：内联样式失去了样式表的许多优点（通过将内容与表示混合在一起）。谨慎使用此方法。
+- Inline CSS：直接在 HTML 元素上使用 style 属性。
+  ```html
+  <!DOCTYPE html>
   <html>
     <body>
       <h1 style="color:blue;text-align:center;">This is a heading</h1>
@@ -67,11 +100,7 @@ Three Ways to Insert CSS
     </body>
   </html>
   ```
-  > 提示：内联样式失去了样式表的许多优点（通过将内容与表示混合在一起）。谨慎使用此方法。
-- Inline CSS：直接在 HTML 元素上使用 style 属性。
-  ```html
-  <h1 style="color:red;">标题</h1>
-  ```
+  > 提示：Inline CSS拥有最高的优先级。
 - External CSS（**最佳实践**）：通过.css 文件链接到 HTML，使样式与内容分离。此为最佳实践。
 
   ```html
