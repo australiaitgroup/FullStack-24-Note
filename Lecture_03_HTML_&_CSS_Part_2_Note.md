@@ -101,7 +101,7 @@ Three Ways to Insert CSS
   </html>
   ```
   > 提示：Inline CSS拥有最高的优先级。
-- External CSS（**最佳实践**）：通过.css 文件链接到 HTML，使样式与内容分离。此为最佳实践。
+- External CSS（**最佳实践**）：通过.css 文件链接到 HTML，使样式与内容分离。此为最佳实践。原因：可复用。
 
   ```html
   <html>
