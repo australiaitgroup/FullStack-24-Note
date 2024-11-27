@@ -33,8 +33,52 @@ Reference Document: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS),
 - 定义：CSS (级联样式表) 是用来装饰和布局网页的语言，描述了 HTML 元素如何在屏幕、纸张或其他媒体上显示
 
 - 作用：让网页内容更加美观，为 HTML 元素设置样式。
-- 语法：<br><br>
-  &emsp;&emsp;![css syntax](./assets/images/css_syntax.gif) - 用选择器找到想要设置样式的 HTML 元素。 - 声明块包含一个或多个以分号分隔的声明。 - 每个声明都包含一个 CSS 属性名称和一个值（键值对），以冒号分隔。 - 多个 CSS 声明用分号分隔，声明块用大括号括起来。
+  
+- 语法：
+  ```CSS
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  h1 {
+      color: blue;
+      text-align: center;
+  }
+  
+  .intro {
+      font-size: 18px;
+      color: green;
+      line-height: 1.6;
+  }
+  
+  #unique {
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+  }
+  
+  ul li {
+      list-style: none;
+      font-size: 16px;
+      margin: 5px 0;
+  }
+  
+  .highlight {
+      color: orange;
+      font-weight: bold;
+  }
+  
+  a:hover {
+      color: purple;
+      text-decoration: underline;
+  }
+  ```
+  - 用选择器找到想要设置样式的 HTML 元素。
+  - 声明块包含一个或多个以分号分隔的声明。
+  - 每个声明都包含一个 CSS 属性名称和一个值（键值对），以冒号分隔。
+  - 多个 CSS 声明用分号分隔，声明块用大括号括起来。
 
 CSS Comments:
 
