@@ -160,7 +160,7 @@ body {
 ### 1.5 Transition:
 
 在 CSS 中，transition 是一种用来控制属性值在一定时间范围内平滑过渡的属性。它允许你在元素属性值发生变化时，使变化过程变得更加平滑和渐进，而不是突然改变。
-![css bem](./assets/images/css_transition.png)
+![css transition](./assets/images/css_transition.png)
 语法：
 
 ```css
