@@ -30,9 +30,18 @@
 `rem`, `em`, `px`, `vh`, `vw`, `%`
 
 - `em` 是相对于**父元素**的单位，用于设置元素的尺寸，例如 width、height、padding、margin。当应用于 font-size 时，em 是相对于该元素的父元素的 font-size。
+   - 父元素`<div>`的font-size是20px。
+   - 第一个`<p>`的font-size是1.5em，即 20px × 1.5 = 30px。
+   - 第二个`<p>`的padding是2em，即 20px × 2 = 40px。
+```css
+<div style="font-size: 20px;">
+  <p style="font-size: 1.5em;">This is 30px font size.</p>
+  <p style="padding: 2em;">This padding is 40px (20px × 2).</p>
+</div>
+```
 - `rem` (用的最多)是一种广泛使用的相对单位，它始终相对于**根元素**（html）的 font-size。因此，rem 在整个文档中保持一致。
 - `px` 通常用于设置边框（border）等较小的尺寸，或者在特定情况下用于定位元素。
-- `vh` 和 `vw` 分别表示视窗的高度和宽度的百分比单位。
+- `vh` 和 `vw` 分别表示视窗的高度和宽度的百分比单位, 1vh = 视窗高度的1%。
 - `%` 百分比单位是相对于**父元素**的，可以用于设置宽度、高度等属性，使其相对于父元素的相应属性的百分比。
 
 ### 1.2 Naming Convention in CSS
@@ -268,7 +277,7 @@ Sass 是一个 CSS 预处理器。
 - 提供简单的逻辑计算方程
 - 开启了模块化的可能性
 
-HTML 无法处理 Scss，所以只在开发阶段使用，并使用 VS code 插件或包将 Scss 文件编译成 CSS 文件
+HTML 无法处理 Scss，所以**只在开发阶段使用**，并使用 VS code 插件或包将 Scss 文件编译成 CSS 文件
 
 > 推荐使用的插件: **`Live Sass Compoiler`**
 
@@ -302,6 +311,8 @@ p {
 ### 2.3 Nesting
 
 Sass lets you nest CSS selectors in the same way as HTML.
+
+嵌套写法的优势：代码的组织性、可读性和维护性更高
 
 Example
 将以下 CSS 代码改写为 Sass
@@ -378,9 +389,9 @@ div {
 
 ### 2.5 Extend and Inheritance
 
-选择器继承可以让选择器继承另一个选择器的所有样式。使用选择器继承，要使用`@Extend`，后面紧跟需要继承的选择器。
+选择器继承可以让选择器继承另一个选择器的所有样式。使用选择器继承，要使用**`@Extend`，后面紧跟需要继承的选择器**。
 
-> 需要配合`%`占位符选择器使用
+> 需要配合**`%`占位符**选择器使用
 
 Example:
 
