@@ -11,9 +11,11 @@
 3. [创建 React App](#3-创建-react-app)
 
 ## 1. 前端工程化与 React
-
-- JavaScript(Vanilla JS | Node.js)
-
+- JavaScript vs Vanilla JavaScript vs Node.js
+  - JavaScript：一种语法
+  - Vanilla JavaScript：一系列的API用来操作HTML和CSS （操作页面和样式以实现相应的功能）
+  - Node.js: 一系列的API用来操作DB，Q，FS
+- JavaScript(Vanilla JS | Node.js)  
   - Vanilla JavaScript 是指原生 JavaScript，未经任何库或者框架修改的纯粹的 JavaScript。它不依赖于任何外部库，如 jQuery 或 React。
   - 使用 Vanilla JavaScript 操作前端页面，引入了 DOM.
 
@@ -24,7 +26,7 @@
   - DOM API 是框架和库操作浏览器的唯一方法
   - 由于 Vanilla JavaScript 自身存在的问题（语法复杂、可读性差等），jQurey 被引入。
 
-- JQuery
+- JQuery（更加符合人类的思考方式，致力于解决难以写出高质量代码的问题）
 
   - 跨浏览器的兼容性
   - 简化的语法
@@ -36,7 +38,11 @@
 ## 2. React 的特性
 
 - Declarative 声明式编程
+  - 在Vanilla JS中，你明确地描述了如何操作DOM：查询元素、添加事件监听器、手动更新内容。
+  - 在React中，你只描述了界面应该如何呈现（声明式）。实际的DOM操作是React库在背后为你处理的。
+  - React允许开发者更加关注应用的状态和逻辑，而不是繁琐的DOM操作细节。
 - Component-Based 组件化
+  - 随着互联网和Web技术的发展，前端项目逐渐变得复杂。
 
 ### 2.1. 命令式 VS 声明式
 
