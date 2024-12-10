@@ -486,8 +486,8 @@ HTML Input Types
 HTML Input Attributes
 表单中常用属性:
 
-- name - 用于标识表单元素的名称，以便在提交表单时将数据与字段名称关联。
-- value - 用于设置表单元素的初始值。type 为 radio 时必须指定一个值
+- name - 用于表单元素的分组与提交。同一页面的多个元素可以拥有相同的name值，name定义了表单数据的键名。
+- value - 用于设置表单元素的初始值，如果用户输入了新内容，value会被更新为用户当前输入的值。type 为 radio 时必须指定一个值。在表单提交时，value 的值会以其原始形式传递，无论是大写、小写还是混合形式。
 - size - 指定表单元素的初始宽度。当 type 为 text 或 password 时，编导元素的大小以字符为单位。对于其他类型，宽度以像素为单位。
 <!-- 或可见的选项数（对于下拉框）。 -->
 - maxlength - type 为 text 或 password 时，输入的最大字符数。
