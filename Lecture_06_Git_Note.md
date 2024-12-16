@@ -74,7 +74,7 @@ https://git-scm.com/
   - 当config时如果不使用 --global 时，设置的就是project setup
   - project setup 优先级高
   ![git_setup](./assets/images/git_setup.jpg)
-> 如果Mac版本code命令不工作，可以参考 :https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
+> 如果Mac版本code命令不工作，可以参考 : https://code.visualstudio.com/docs/setup/mac
 
 ### 4.2 git 的工作流程
 ![git_summary](./assets/images/git_summary.jpg)
