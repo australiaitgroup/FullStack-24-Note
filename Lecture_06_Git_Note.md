@@ -141,18 +141,19 @@ https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
   - 也可以使用 vscode 图形化界面里的 discard
 - `git clean` 把不存在在历史文件中的新增的文件全部删掉，会报错，：refuse to clean，必须要进行强制操作。
   - 所以使用 `git clean -f` 强制清除
-- `git revert` 回滚，revert 会记录下回滚的动作，产生新的 commit , 所以可以使用。
+- `git revert` 回滚，生成一个新的提交来反转指定提交的更改。这意味着它不会修改提交历史，而是向历史中添加一个新的提交。
   - `git revert <SHA>`
   - revert 可以 revert revert
-- `git reset` 回滚，公司不允许，自己本地的有权限，会从历史记录中删除commit。
+- `git reset` 回滚，重置到指定的提交（此后的提交会被删除）。公司不允许，自己本地的有权限，会从历史记录中删除commit。
   - reset 不是 reset 掉某一条，而是 reset 到目标状态
-  - `soft reset` - reset 掉的内容 放到 working folder 下
+  - `soft reset` - reset 掉的内容 放到 working folder 下（提交的内容有错误的场景下可以使用）
       > `git reset` 默认就是 `soft reset`
-  - `hard reset` - 相反
+  - `hard reset` - 会把working folder也完全重置
 
 > `git push`时候如果不想 push 现在 commit 的版本，那我就必须用刚刚 undo 几种办法回滚到想 commit 的版本再 push  
 > 本地 revert 的记录会被上传到远程库  
 > 本地 reset 的记录不会被上传到远程库
+- `git status` 有问题用这个检查，不要在图形界面乱点。 
 
 ### 4.7 一些其他命令
 生成文字或图形化log记录
