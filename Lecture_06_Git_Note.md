@@ -193,7 +193,7 @@ https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
 merge from - `git merge <branchName>`
 
 > 因为每天都有人提交代码，所以每天上班都从master branch拉取最新的代码，并merge到自己的branch上，然后开始工作，这样才不会冲突并基于最新的代码。
->  - 有时候拉取的时候conflict就会发生
+>  - 有时候拉取的时候conflict就会发生。conflict: 不同的branch上，对同一个文件同一个地方进行了修改。
 >  - 如果出现conflict, 就要做resolving
 >  - 所以要少量少量不断提交，不要做大的变更再提交
 
@@ -204,7 +204,7 @@ merge from - `git merge <branchName>`
 ### 6.1 Pull 和 Push
 一般公司的repository已经存在，所以一般将remote repository的内容clone到本地：
 - `git clone <url>`
-  > 不要在 git 目录里 `clone` 或 `git init`, 不要形成嵌套的 git
+  > 不要在 git 目录里 `clone` 或 `git init`, 不要形成嵌套的 repo
 
 - 使用 `git remote -- verbose` 打印详细信息
   > default 的 remote 就叫 origin  
@@ -220,7 +220,7 @@ merge from - `git merge <branchName>`
   > 公司一般 template  
   > 一般有 review and test，test csd, code quality
 可以指定 reviwer
-  > review 完以后一般是 branch 的 owner 自己点 rebase and merge，也有的时候是 reviewer 点
+  > review 完以后一般是 branch 的 owner 自己点 rebase and merge，请尽快点！！不然可能会有conflict
 
 
 ### .gitignore 文件
@@ -252,7 +252,7 @@ merge from - `git merge <branchName>`
 
 - 缺点：合并提交会增加历史记录的复杂性，可能导致分支历史记录的混乱，特别是在团队协作中频繁进行合并操作时。
 
-2. Rebase 变基：
+2. Rebase 变基：（实际工作中使用的更多）
 - 工作原理：Rebase 将当前分支的基础（基底）更改为另一个分支的最新提交，并将当前分支的每个提交依次应用于新的基础提交上，创建一系列新的提交，形成一条线性的提交历史记录。
 
 - 效果：Rebase 后的分支历史记录是线性的，看起来更加整洁，没有合并提交。它会将当前分支的提交“移动”到另一个分支的顶端，保持了提交的顺序，并提供了更清晰的提交历史记录。
