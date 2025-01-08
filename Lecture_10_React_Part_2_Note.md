@@ -39,7 +39,7 @@
 
 - Declarative 声明式编程
   - 在Vanilla JS中，你明确地描述了如何操作DOM：查询元素、添加事件监听器、手动更新内容。
-  - 在React中，你只描述了界面应该如何呈现（声明式）。实际的DOM操作是React库在背后为你处理的。
+  - 在React中，你只描述了界面应该如何呈现（声明式）。实现了在js中直接写html。实际的DOM操作是React库在背后为你处理的。
   - React允许开发者更加关注应用的状态和逻辑，而不是繁琐的DOM操作细节。
 - Component-Based 组件化
   - 随着互联网和Web技术的发展，前端项目逐渐变得复杂。
@@ -121,13 +121,19 @@ export default AlertButton;
 
 而组件化就像乐高积木一样：
 
-- 模块化与可重用性
-- 简单与清晰的结构
+- 模块化与可重用性   
+- 简单与清晰的结构  
 - 易于维护
-- 团队协作
+- 团队协作  
 
 ## 3. 创建 React App
 
-- [React](https://react.dev/): 一个专注于 UI 的 JavaScript 库
-- [Babel](https://babeljs.io/): 让现代 JavaScript 兼容所有浏览器，引入非标准化的 JavaScript 版本。
-- [Webpack](https://webpack.js.org/): 模块捆绑器和任务运行器
+- [React](https://react.dev/): 一个Facebook开发的用于构建用户界面的JavaScript 库，它允许开发者使用组件化的方式创建声明式UI，而不需要关心如何高效地更新和渲染UI。但React本身只是一个库，它并不包括一些必要的工具和功能使其在现代浏览器中运行，特别是当我们考虑到ES6+语法和JSX。
+> JSX 是 JavaScript XML 的缩写，是一种在 React 应用程序中使用的语法扩展。它允许开发者在 JavaScript 代码中写出类似 HTML 的结构。
+- 对react来说必不可少的两样东西：
+   - [Babel](https://babeljs.io/): 让现代 JavaScript 兼容所有浏览器，引入非标准化的 JavaScript 版本。
+   - [Webpack](https://webpack.js.org/): 模块捆绑器和任务运行器
+
+- 脚手架： create react app
+  - npx = npm execute (安装并执行)
+  - npx create-react-app my-app = npm i create-react-app + create-react-app my-app 
