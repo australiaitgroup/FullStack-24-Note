@@ -15,13 +15,25 @@
    - [4.2. 类组件](#42-类组件class-component)
    - [4.3. 高阶组件](#43-高阶组件high-order-component)
 
-## 1.回顾上节课
+##职业规划部分
+- Graduated: 不理解高质量代码
+- Junior: 理解高质量代码，不能有效产出。自我驱动 -> 短线投资回报（快速爬到mid、senior的能力），学习能力     
+- Mid: 理解高质量代码，能有效产出，不能带团队。      
+- Senior: 理解高质量代码，能有效产出，能指导团队。但是没办法有效解决核心问题。（代码能力VS项目经验， 5 Years Vision, 应对5年内可能出现的问题）
+- Principle/ Staff: 能有效解决核心问题（技术革新等）。
+- 管理路线&技术路线 Tech Lead: 调用资源解决核心问题。        
+- 管理路线：Team Lead。  
+
+> 澳洲不能只会做不会说，不然你就在mid卡死了。          
+> 第一份工作最好是往下降一级，比如以mid水平来面junior。第一份工作会比正常找工作难的多。
+
+## 1.回顾上节课    
 
 - React
-  - 一个专注于 UI 的 JavaScript 库
-  - 官方文档：https://react.dev/
+  - 一个专注于 UI 的 JavaScript 库    
+  - 官方文档：https://react.dev/      
 - Babel
-  - 核心：编译
+  - 核心：编译    
   - 让现代 JavaScript 兼容所有浏览器，引入非标准化的 JavaScript 版本。
   - 官方文档：https://babeljs.io/docs/
 - Webpack
