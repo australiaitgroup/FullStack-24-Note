@@ -182,8 +182,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
    - 传统的浏览器更新 DOM 是全局的，没办法只更新局部内容（即它无法高效地更新少量变化的部分）。
 - aDOM1 -> vDOM1 -> vDOM2 -> vDOM1（JS 进行的差值计算，不涉及矩阵计算） -> diff
-
-  -React 的更新流程：
+   - React 的更新流程：
       - 首先从旧的实际 DOM（aDOM1）生成虚拟 DOM（vDOM1）。
       - React 会通过组件状态或属性的改变生成新的虚拟 DOM（vDOM2）。
       - React 比较新旧虚拟 DOM 的差异（diff 算法）。
