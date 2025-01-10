@@ -207,8 +207,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ```jsx
 const isUserLoggedIn = true;
-
-function WelcomeMessage() {
+//{}内必须是合法的js语句，比如return必须写在函数里
+function WelcomeMessage() {      
     const getWelcomeMessage = () => {
         if (isUserLoggedIn) {
             return <h1>Welcome back!</h1>
@@ -224,7 +224,7 @@ function WelcomeMessage() {
     )
 }
 
-// 更好的写法
+// 更好的写法 三元表达式
 function WelcomeMessage() {
     return (
         <div>
@@ -241,8 +241,8 @@ function WelcomeMessage() {
 ```jsx
 const isVIP = false;
 
-const total = <stong>$88888.88</strong>
-
+const total = <stong>$88888.88</strong>  
+//短路计算
 return (
     <div>
         {!isVIP && <a href="/become-a-vip">1s变强，点这里</a>}
@@ -251,6 +251,7 @@ return (
     </div>
 )
 ```
+> true && anything = anything <br>false && anything = false <br>true || anything = true <br>false || anything = false 
 
 ### 3.3. 变量注入
 
