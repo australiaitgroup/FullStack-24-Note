@@ -239,7 +239,7 @@ function WelcomeMessage() {
 **Example 2**
 
 ```jsx
-const isVIP = false;
+const isVIP = false;            
 
 const total = <stong>$88888.88</strong>  
 //短路计算
@@ -247,25 +247,45 @@ return (
     <div>
         {!isVIP && <a href="/become-a-vip">1s变强，点这里</a>}
 
-        {total || <a href="/充值入口">首冲1元礼包</a>}
+        {total || <a href="/充值入口">首冲1元礼包</a>}                               
     </div>
 )
 ```
-> true && anything = anything <br>false && anything = false <br>true || anything = true <br>false || anything = false 
+> true && anything = anything <br>false && anything = false <br>true || anything = true <br>false || anything = false <br>null, undefine, 0, false,'' = false <br> 除此之外都等于true
+```jsx
+//如果Hover在button，就渲染dropdown
+isHoverd && <Dropdown />
+const userName = user && <div>{user.name}</div>
+userName || <a href="/login">Login</a>
+```
 
-### 3.3. 变量注入
+### 3.3. 变量注入: 创建一个变量，并在消息中显示它
+```
+const student = {
+   name: 'Alice'
+}
+<h1>Hello, {student.name}</h1>                  
+<h1>{`Hello, ${student.name}!`}</h1>
+```
 
 - 在 React 中，JSX 变量注入是指将 JavaScript 表达式嵌入到 JSX 中的过程。这使我们能够在 JavaScript 中使用类似于 HTML 的写法，大大提高了代码的可读性和可维护性。给我们代码带来了无限的可能。
-  - 问题：为什么大大提高了代码的可读性和可维护性？为什么给我们代码带来了无限的可能？
+  - 问题：为什么大大提高了代码的可读性和可维护性？为什么给我们代码带来了无限的可能？  
   - 答案：readable, maintainable, declarative. 把 HTML 这一个 Markdown Language 变成了可以做逻辑运算的编程语言。
 - 在 JSX 里面，所有已`<`开头到`>`结尾的内容，都会被认定为 HTML
 - 在 JSX 的 HTML 里面，所有已`{`开头到`}`结尾的内容，都会被认定为 JavaScript，这段内容的执行结果会被直接作为 string 渲染出来。
 - 在 JavaScript 中，`()`只起到代码分隔的作用，并没有特殊的 JSX 含义。
 - 所有的 falsy 值，除了 0 以外，都会被渲染为空。
 - array 类型，会被渲染为.map(item => item)的结果
+  ```jsx
+  <div>{[1, 2, 3]}</div>
+  <div>{[1, 2, 3].map((item) => item)}</div>
+  <div>1, 2, 3</div> //NO   
+  <div>123<div> //YES.没有逗号       
+  ```
 - number 类型，会被渲染为.toString()的结果
 - boolean 类型，会被渲染为空
 - object 类型，不可以被作为 JSX 的渲染内容
+- null类型和undefine类型会被渲染为空
 
 > 组件后缀名可以写 jsx 也可以写 js，但是 jsx 更具有可读和可维护性，以区分其他 js 文件
 > 写组件要具有层级划分和就近原则，这样具有可维护性
@@ -273,7 +293,7 @@ return (
 
 ## 4. 组件
 
-组件是独立的，可复用的代码块，(组件是"最小"责任实现单元)，他们可以嵌套，管理自己的状态，并接受输入的参数
+组件是独立的，可复用的代码块（function, js中没有class的概念，所谓class只是函数构造器的语法糖），(组件是"最小"责任实现单元)，他们可以嵌套，管理自己的状态，并接受输入的参数
 
 **核心概念**：
 
@@ -281,7 +301,7 @@ return (
    - Single Responsibility
    - Open / Close
 2. 可复用
-   - 组件可以在不同的环境和上下文中重复使用
+   - 组件可以在不同的环境和上下文中重复使用   
 3. 组合
    - 嵌套和组合，可以构建出各种各样的应用界面
 
@@ -310,6 +330,29 @@ function MyComponent() {
 
 export default MyComponent;
 ```
+```js           
+import MyComponent from './MyComponent'
+
+//我们可以在JSX中像写 html tag 一样使用组件        
+function App() {
+   return (           
+      <div className="App">            
+         //Self-closing tag
+         <MyComponent />
+      </div>
+   )     
+}
+
+//也可以作为函数调用。但是不推荐，尽量写的像html
+function App() {
+   return (           
+      <div className="App">            
+         {Mycomponent()}
+      </div>           
+   )     
+}
+export default App
+```
 
 > return 值为 JSX 的 function 就是 React 组件，这样的组件我们可以通过导入在另一个文件中使用
 
@@ -318,7 +361,7 @@ export default MyComponent;
 **💡 文件名与组件名称一致**
 在 React 中，组件名称的首字母通常应大写（TitleCase or PascalCase）的约定有几个原因：
 
-1. 区分元素和组件
+1. 区分元素和组件，提高可读性
    - 如：`<div>` 是 html 元素， 而`<MyComponet />`是 React 组件
 2. 工具和库的兼容性
    - 一些 JavaScript 和 React 工具、库或插件可能依赖于此命名约定来正确识别和处理组件
@@ -327,63 +370,3 @@ export default MyComponent;
 
 ![react_folder](./assets/images/react_folder.jpg)
 
-### 4.2. 类组件（Class Component）
-
-使用 ES6 定义的，拥有更多功能，比如生命周期方法。
-
-```js
-import React, { Component } from "react";
-
-class MyComponent() extends Component {
-  render() {
-    return (
-        <div>Hello, World!</div>
-    );
-  }
-}
-
-export default MyComponent;
-```
-
-### 4.3. 高阶组件（High-Order Component）
-
-用于重用组件逻辑、增强组件功能以及共享代码。它实际上是一个函数，接受一个组件作为参数，并返回一个新的组件。现在没人写了，但你有可能找到要维护高阶组件的工作 good luck😉。
-
-```jsx
-// 高阶组件定义
-const withCodeBlock = (WrappedComponent) => {
-  return function () {
-    return (
-      <code className="codeBlock">
-        <WrappedComponent />
-      </code>
-    );
-  };
-};
-
-// 原始组件定义
-const MyComponent = () => {
-  return <div>Hello, World!</div>;
-};
-
-// 不可复用
-const MyComponentInCodeBlock = () => {
-  return (
-    <code className="codeBlock">
-      <div>Hello, World!</div>
-    </code>
-  );
-};
-
-// 将原始组件和高阶组件组合在一起，产生新的组件，且没有修改原始组件
-const MyComponentInCodeBlock = withCodeBlock(MyComponent);
-
-// 这个是当下更好的答案，简单且没有修改原始组件
-const MyComponentInCodeBlock = () => {
-  return (
-    <code className="codeBlock">
-      <MyComponent />
-    </code>
-  );
-};
-```
