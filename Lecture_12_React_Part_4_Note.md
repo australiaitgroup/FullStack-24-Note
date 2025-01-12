@@ -30,31 +30,36 @@ React 在调用 component 时，是使用 HTML Attribute 来传递数据的。HT
 
 同时 HTML 和 React Component 中都有 attribute 的概念，所以从可读性角度，React 在这里引入 `props` 作为区分。
 
+> 面试要体现思考能力，引经据典，理解文档背后的理论依据。<br> 方法名动词在前名词在后的原因：js是命令式编程
+
 ```jsx
-// Welcome Component
-function Welcome(props) {
-  // 传入参数为 props object
-  return <p>Welcome, {props.name}!</p>;
+const TaxCalculation = ({income, taxTable}) => { //调用时解构赋值
+   //{income: myIncome, taxTable: taxTable2024}  
+   //根据income来计算
+   //根据taxTable来计算              
 }
 ```
 
-```jsx
-// HomePage Component
-function HomePage() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <Welcome name="Alice" /> // 这里传入的其实是 {name: "Alice"}
-    </div>
-  );
-}
+```jsx    
+const income = 210000;
+const taxTable = [];
+
+const App = () => (
+   <div>             
+      {TaxCalculation(income, taxTable)}  
+      // <TaxCalculation {income} {taxTable} /> 不符合html的书写习惯，书写方式
+      //key value格式，类似于一个object
+      //component != element     property != attribute  
+      <TaxCalculation income={income} taxTable={taxTable} />
+   </div>
+)
 ```
 
-这样就让我们的 react 组件的写法无限接近于 HTML。
+这样就让我们的 react 组件的写法无限接近于 HTML。   
 
-**方法的传递**
+**方法的传递**             
 
-```jsx
+```jsx  
 // login function
 const login = () => ...
 ```
