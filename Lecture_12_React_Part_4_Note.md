@@ -230,9 +230,10 @@ function ChildComponent(props) {
 
 **Example**
 
-```jsx               
+```jsx
+//Card.jsx             
 const SIZE_CLASS_NAMES = {
-   small: 'py-2 px-4'
+   small: 'py-2 px-4'  
    large: 'py-4 px-6'
 }
 const Card = ({content, size}) => {
@@ -242,6 +243,7 @@ const Card = ({content, size}) => {
    )       
 }
 
+//Item.jsx
 const Item = ({ name, price }) => (
    <Card size="small">
       <p>{name}</p>
@@ -251,6 +253,7 @@ const Item = ({ name, price }) => (
    </Card>
 )
 ```
+> 需要肌肉记忆的：想写if else时，用 object 格式<br>想写注释时，重新定义 variable/function name<br>想copy paste的时候，用function复用<br>用function复用 jsx 的时候，用component<br>传递 jsx 的时候，用children
 
 **面试题**
 
