@@ -49,7 +49,7 @@ const App = () => (
       {TaxCalculation(income, taxTable)}  
       // <TaxCalculation {income} {taxTable} /> 不符合html的书写习惯，书写方式
       //key value格式，类似于一个object
-      //component != element     property != attribute  
+      //component != element     property != attribute    用键值对的形式传递，没有书写顺序问题
       <TaxCalculation income={income} taxTable={taxTable} />
    </div>
 )
@@ -224,33 +224,32 @@ function ChildComponent(props) {
 
 ### 1.4 Children
 
-在 React 中，`children` 属性是一个特殊的属性，允许组件接受任意内容作为子元素。这些内容可以是纯文本、其他 React 元素，以及组件。`children` 属性代表了组件开启和关闭标签之间的所有内容。
+在 React 中，`children` 属性是一个特殊的属性，允许组件接受任意内容作为子元素。这些内容可以是纯文本、其他 React 元素，以及组件。`children` 属性代表了组件开启和关闭标签之间的所有内容。  
+
+当你需要传递一段jsx给组件的时候，children是最优解。其作为特殊的property，不需要使用 children= 的方式传递，所有tag开到tag关之内的内容都会被作为children的value
 
 **Example**
 
-```jsx
-// ParentComponent.js
-function ParentComponent() {
-  return (
-    <div>
-      <ChildComponent>
-        <p>This is a child element</p>
-        <button>Click me</button>
-      </ChildComponent>
-    </div>
-  );
+```jsx               
+const SIZE_CLASS_NAMES = {
+   small: 'py-2 px-4'
+   large: 'py-4 px-6'
+}
+const Card = ({content, size}) => {
+      <div className={`bg-white broder-1 box-shadow ${SIZE_CLASS_NAMES[size]}`}>
+         {content}   
+      </div>       
+   )       
 }
 
-// ChildComponent.js
-function ChildComponent(props) {
-  return (
-    <div>
-      <h2>Child Component</h2>
-      {/* Display the children passed to this component */}
-      {props.children}
-    </div>
-  );
-}
+const Item = ({ name, price }) => (
+   <Card size="small">
+      <p>{name}</p>
+      <p>
+         <Price>{price}</Price>
+      </p>
+   </Card>
+)
 ```
 
 **面试题**
@@ -271,7 +270,7 @@ function App() {
 
 **A**: 改写如下。原因是，好的 jsx 的写法应该是无限趋近于 html 的，children 是用来传递另一个 jsx 的而不是传值，传值应该使用 props 而不是 children。
 
-```jsx
+```jsx        
 // Hello.jsx
 function Hello({ name }) {
   return <p>Hello, {name}</p>;
