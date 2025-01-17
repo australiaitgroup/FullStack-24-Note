@@ -313,7 +313,8 @@ function App() {
 
 ### 1.5 传递所有 props
 
-可以使用扩展运算符`...`来传递所有的 props
+可以使用扩展运算符`...`来传递所有的 props。  
+不推荐junior使用这种写法，需要什么传什么。
 
 ```jsx
 // Student.jsx
