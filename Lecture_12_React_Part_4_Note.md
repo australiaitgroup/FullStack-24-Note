@@ -314,16 +314,15 @@ function App() {
 ### 1.5 传递所有 props
 
 可以使用扩展运算符`...`来传递所有的 props。  
-不推荐junior使用这种写法，需要什么传什么。
-
-```jsx
+不推荐junior使用这种写法，需要什么传什么(你要知道自己在传什么)。你的数据要是可读的，对于组件make sense的。（可以把props理解为Student组件的attributes， Student的name, Student的age， 但没有Student的student这种东西）
+```jsx    
 // Student.jsx
 function Student(props) {
-  return (
+  return (   
     <div>
       <h3>Student</h3>
       <p>Id: {props.id}</p>
-      <p>Name: {props.name}</p>
+      <p>Name: {props.name}</p>     
       <p>Age: {props.age}</p>
     </div>
   );
@@ -337,7 +336,9 @@ function App() {
     age: 20,
   };
 
-  return <Student {...student} />;
+  return <Student {...student} />;        
+//or <Student student={student} />             
+//推荐写：<Student id={student.id} name={student.name} age={student.age}>
 }
 ```
 
