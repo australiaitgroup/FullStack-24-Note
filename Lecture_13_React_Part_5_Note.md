@@ -213,6 +213,8 @@ function App() {
 
 ## 2. State 状态
 
+State的逻辑: 统一管理状态的更新，并在setState中实现页面更新逻辑。  
+
 React 的 Hooks 机制，特别是 useState，带来了对 state 管理的新思路。与此前 class 组件中的 state 对象不同，允许我们为每一部分状态独立地定义其自己的状态和设置函数。这有几个关键的优势和原因：
 
 ```jsx
@@ -240,7 +242,7 @@ function MyComponent () {
   const [name, setNamel = useState( 'Alice');
   const lage, setAge] = useState(25) ;
 
-  setAge(32) ;
+  setAge(32) ;  
 
   const [profile, setProfile] = useState({
     name: 'Alice',
@@ -253,13 +255,35 @@ function MyComponent () {
   })
   ```
 
-- 使用多个状态：在一个组件中，你可以使用多个 `useState` 来维护多个状态片段。
+- 使用多个状态：在一个组件中，你可以使用多个 `useState` 来维护多个状态片段。                                  
+> 注意组件state的命名，要对于组件是有意义的。比如：heater有power、temperature和fanspeed，层层向下。禁止叫data。<br>MyHome -> LivingRoom { heater: {power} }<br>LivingRoom -> heater {power}<br>Heater -> power
 
-## 3. 状态提升
+```jsx      
+`const LivingRoom = () => {  
+   const [light, setLight] = useState({ power: false })
+
+
+   const [heater, setHeater] = useState({   
+      power: false,
+      temperature: { min: 18, max: 20},
+      fanspeed: 0
+   })
+
+   setHeater({
+      ...heater,
+      temperature: { ...heater.temperature, max:24 }
+   })      
+}
+
+```
+
+## 3. 状态提升  
 
 在 React 中，为了确保数据的一致性，我们经常采用状态提升（State Lifting）的策略。这意味着将状态从一个子组件移动到其共同的父组件中，以便其他兄弟组件也可以访问和修改该状态。
 
 - 当两个或更多的组件需要共享相同的状态时，而该状态又在其中一个组件内部，这时我们通常会使用状态提升。提升状态到它们的最近共同父组件中，这样就能确保所有组件都可以访问和更新该状态，保持数据的一致性。
+
+
 
 - 状态提升确保了数据在组件树中流动的清晰性，使得数据在任何给定时间点都有单一的“真实来源”，确保了应用的一致性和可预测性。通过这种方式，我们能更好地控制和追踪数据的变化，避免潜在的数据不同步的问题。
 
