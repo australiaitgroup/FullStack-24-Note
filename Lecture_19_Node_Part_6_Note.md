@@ -4,7 +4,7 @@
 
 课堂代码：
 
-- [jr-cms](https://github.com/LazeBear/jr-fullstack-notes-22/tree/master/jr-cms)
+- [jr-cms](https://github.com/LazeBear/jr-fullstack-notes-24.git)
 
 ## Table of Contents
 
