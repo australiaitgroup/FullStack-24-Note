@@ -4,7 +4,7 @@
 
 参考：
 
-- [课堂代码](https://github.com/LazeBear/jr-fullstack-notes-22)
+- [课堂代码](https://github.com/LazeBear/jr-fullstack-notes-24.git)
 
 ## Table of Contents
 
