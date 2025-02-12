@@ -31,13 +31,15 @@
 - MongoDB & Mongoose
 - Authorization & Autheticaton
 - Testing
-- Deployment
+- Deployment           
+
+> 关于AI的使用：学习的时候建议不要使用。写项目可以。（你要能发现AI犯的错误）用AI做开发推荐cursor和windsurf。
 
 ## 2. About Node.js
 
 - Node.js is a **JavaScript runtime environment** built on Chrome's V8 engine. (Chrome's V8 engine is a high-performance JavaScript engine.)
 
-  > 💡 Another Runtime Environment: [Bun](https://bun.sh/)
+  > 💡 Another Runtime Environment: [Bun](https://bun.sh/) [Deno](https://deno.com/) 选择技术栈的考虑因素：团队偏好，项目需求，技术栈的生态
 
 - Node.js provides an environment for executing JavaScript code outside of a web browser. It allows developers to use JavaScript to build server-side applications, not just client-side scripts running in browsers.
 
@@ -55,7 +57,7 @@
 
 - This is achieved through asynchronous programming, where tasks are initiated, and the system is notified when the task completes.
 
-### 2.1 Non-blocking and Asynchronous
+### 2.1 Two Key Words: Non-blocking and Asynchronous
 
 - Asynchronous 异步 | non-blocking 非阻塞
 
