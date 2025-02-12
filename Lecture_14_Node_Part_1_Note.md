@@ -59,21 +59,26 @@
 
 ### 2.1 Two Key Words: Non-blocking and Asynchronous
 
+- 会block的： I/O 操作（文件读写，数据库读取）
+- 程序会停下来等待这些操作完成则为阻塞，不等待则为非阻塞。
+
 - Asynchronous 异步 | non-blocking 非阻塞
+
+  - Node.js is designed to be asynchronous and non-blocking, meaning it can handle many concurrent operations without waiting for one to complete before starting the next.
 
   - Asynchronous operation is like making a phone call, leaving a message, and continuing with your day while waiting for a callback. You don't wait on the line.
 
 - Synchronous 同步 | blocking 阻塞
 
-  - wait on the line
+  - wait on the line    
 
-- JavaScript is single threaded, so it use **Event Loop** to enable Asynchronous operation, to make it non blocking and allowing tasks to be processed concurrently
+- JavaScript is **single threaded**, so it use **Event Loop** to enable Asynchronous operation, to make it non blocking and allowing tasks to be processed concurrently
 
 ### 2.2 Event-driven and Event Loop
 
-> [Event-Driven Programming in JavaScript](https://medium.com/@teamtechsis/event-driven-programming-in-javascript-c47ea5975005)
+> [Event-Driven Programming in JavaScript](https://medium.com/@teamtechsis/event-driven-programming-in-javascript-c47ea5975005)   
 
-> [Event Loop simulator](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
+> [Event Loop simulator](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)   
 
 Example:
 
