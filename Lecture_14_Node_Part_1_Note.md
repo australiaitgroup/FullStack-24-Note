@@ -301,6 +301,8 @@ Example:
 
 **JavaScript Object Notion**
 
+我们开发的常常是API server, 返回的是数据， 数据是JSON格式。
+
 - similar with JavaScript Object, but doesn't support `undefined`
 
 **Structure of JSON**
@@ -309,10 +311,11 @@ JSON is built on two structures:
 
 - Objects: A collection of name/value pairs enclosed in curly braces `{}`.
 - Arrays: An ordered list of values enclosed in square brackets `[]`.
+- 常用方法：JSON.stringify(), JSON.parse()进行JSON格式和字符串之间的转换。
 
 Example:
 
-```json
+```json           
 {
   "name": "Mason",
   "age": 18,
