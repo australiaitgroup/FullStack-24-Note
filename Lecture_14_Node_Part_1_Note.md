@@ -105,15 +105,19 @@ console.log('C');
 
   5. The **_event loop_** checks if the call stack is empty reguarly. If the call stack is empty, meaning all synchronous functions have finished executing, the callback function from setTimeout is executed. Therefore, **the final waiting time for setTimeout may be longer than 1000 milliseconds**.
 
+>  event loop pick order: nextTick、microtask（promise）、macrotask(setTimeOut、setInterval、i/o、 setImmediate) 
+
 > 💡 setTimeout is not always accurate, and how to fix it?
 
-> In Node.js, in addition to the Callback Queue, there is also a Promise Queue used to handle asynchronous operations based on Promises. The handling of Promises is similar to setTimeout, but the callback functions of Promises are pushed into the Promise Queue rather than the Callback Queue. The event loop first processes the **_microtask queue (such as the Promise queue)_**, and then the **_macrotask queue (such as the callback queue)_**.
+> In Node.js, in addition to the Callback Queue, there is also a Promise Queue used to handle asynchronous operations based on Promises. The handling of Promises is similar to setTimeout, but the callback functions of Promises are pushed into the Promise Queue rather than the Callback Queue. The event loop first processes the **_microtask queue (such as the Promise queue)_**, and then the **_macrotask queue (such as the callback queue)_**.<br>asynchronous 1.callback function (除了array的foreach是强制同步的)--> callback queue --> microtask queue<br> 2.promise - async&await --> microtask queue
 
-> 💡 [Promise Quiz](https://github.com/LazeBear/jr-fullstack-notes-22/blob/master/1-node/promis-quiz.md)
+> 💡 [Promise Quiz](https://github.com/LazeBear/jr-fullstack-notes-22/blob/master/1-node/promis-quiz.md)   
 
 ## 3. Node.js Architecture
 
 ![node_architecture](./assets/images/node_architecture.jpg)
+- 我们做开发时写的代码在application layer
+- javascript通过中间binding layer调用底层c、c++代码，实现文件读取、网络请求等。
 
 ## 4. Node Version
 
