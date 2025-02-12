@@ -39,7 +39,7 @@
 
 - Node.js is a **JavaScript runtime environment** built on Chrome's V8 engine. (Chrome's V8 engine is a high-performance JavaScript engine.)
 
-  > 💡 Another Runtime Environment: [Bun](https://bun.sh/) [Deno](https://deno.com/) 选择技术栈的考虑因素：团队偏好，项目需求，技术栈的生态
+  > 💡 Other Runtime Environment: [Bun](https://bun.sh/) 、[Deno](https://deno.com/) <br>选择技术栈的考虑因素：团队偏好，项目需求，技术栈的生态
 
 - Node.js provides an environment for executing JavaScript code outside of a web browser. It allows developers to use JavaScript to build server-side applications, not just client-side scripts running in browsers.
 
