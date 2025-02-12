@@ -253,7 +253,7 @@ Example:
    server.listen(3000);
    ```
 
-2. Listen on port 3000 and return a html
+2. Listen on port 3000 and return a html（server side rendering）
 
    ```js
    const fs = require('fs');
