@@ -135,7 +135,7 @@ There is a difference between front-end development and Node.js development when
 - **ES Module** (Front-end)
 - **CommonJS Module** (Node.js)
 
-**ES Module**
+**ES Module** （异步加载，碰到了再读）   
 
 - Uses `import` and `export` statements.
 - Supports asynchronous module loading natively.
@@ -148,7 +148,7 @@ export function sum(a, b) {}
 import { sum } from './a'; // async loading / non-blocking
 ```
 
-**CommonJS**
+**CommonJS** （同步加载，先全部读进来）   
 
 - Uses `require` to import modules and module.exports or exports to export modules.
 - Synchronous module loading.
@@ -169,6 +169,8 @@ const { sum } = require('./a'); // sync loading / blocking
 > 💡 Node.js used to only support CommonJS, but starting from node.js v12, it supports both. However, node.js is still recommended
 
 **Private Variable & IIFE(Immediately invoked function expression)**
+
+模块化本质上是把函数从外部用IIFE包起来，目的是封装，让变量私有化。
 
 ```js
 const moduleA = { exports: {} };
