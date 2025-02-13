@@ -302,17 +302,17 @@ RESTful APIs are a subset of Web APIs
 
 3. 使用恰当的 http method 来描述操作
 
-   - 获取数据 -> GET
-   - 添加 -> POST
+   - 获取数据 -> GET /api/v1/users
+   - 添加 -> POST /api/v1/users
 
-4. 在 url 上，**可以选择**使用嵌套形式来定位资源
+4. 在 url 上，**可以选择**使用嵌套形式来定位资源:当notes一定要通过user获取时，用嵌套。
 
    - /api/v1/users/{userId}/notes
    - /api/v1/useers/:userId/notes
 
 5. 使用对应的 http status code 来表示请求的结果
 
-6. 注意返回数据的大小，尽量进行分页操作
+6. 注意返回数据的大小，尽量进行分页操作 pagination
 
    - GET /api/v1/users 返回了 10，000 条数据
    - 我们分成 1000 页，每页 10 个数据
