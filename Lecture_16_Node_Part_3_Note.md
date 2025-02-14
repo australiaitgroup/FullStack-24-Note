@@ -43,6 +43,8 @@
   - **Versions**: the versions of the package that have been released. This section is crucial for tracking changes, bug fixes, and new features introduced over time.
   - **Tags**: Tags are aliases for specific versions of the package, making it easier to reference versions without needing to know the exact version number.
 
+> License很重要，涉及是否能够商用。
+
 ## 2. Using NPM
 
 ### 2.1 Initialization
@@ -55,7 +57,7 @@
 
 Creating a new `package.json` file for your Node.js project. This file is essential for managing your project's dependencies, scripts, version, and other metadata.
 
-> 💡 This command will be only used when creating a new project.
+> 💡 This command will be only used when creating a new project. clone的项目不需要再init。
 
 ### 2.2 Install package
 
@@ -63,9 +65,12 @@ Creating a new `package.json` file for your Node.js project. This file is essent
 
   OR
 
-- `npm i`
+- `npm i`  
+> 会根据`package.json`里的dependency list做安装。一般用于刚从repo clone完，或者pull之后无法运行debug 
 
-### 2.3 package.json and package-lock.json
+### 2.3 package.json and package-lock.json      
+
+> 注意：这两个不要手动改，所有对它们的操作都通过命令行
 
 `package.json` and `package-lock.json` are two essential files that work together to manage dependencies and ensure consistency across different development environments
 
