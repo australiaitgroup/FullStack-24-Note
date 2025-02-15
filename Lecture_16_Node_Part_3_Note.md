@@ -203,6 +203,8 @@ npm outdated
 npm i --save-dev [package name]
 npm i -D [package name] // The -D flag is a short form of --save-dev
 ```
+eg.nodemon、prettier、eslint、webpack、vite        
+前端项目不严格区分dependencies和devDependencies.因为npm build打包时会自动选择实际使用的package。
 
 ### 4.6 Global Dependencies
 
@@ -219,7 +221,7 @@ When you install packages globally (`npm install -g`), they are not added to the
 `npx` is a package runner tool. It allows you to execute Node packages directly without having to install them globally or locally beforehand.
 
 - `npx` is commonly used for running command-line tools or scripts from packages that you don't want to install globally or locally as project dependencies.
-- It's especially useful for running one-off commands or tools that you only need temporarily.
+- It's especially useful for running one-off commands or tools that you only need temporarily and need the latest version.
 
 ### 4.8 scripts in package.json
 
@@ -354,7 +356,9 @@ Middleware functions are functions that have access to the request object (req),
 
 In Express.js, you can get data from a request in several ways depending on where the data is coming from. The data could be in the query string, the URL parameters, the body of the request, or the headers.
 
-1. URL Parameters
+> 获取到的数据是字符串形式。
+
+1. URL Parameters：commonly used for GET、PUT、DELETE、PATCH request.
 
    ```js
    const express = require('express');
@@ -370,10 +374,10 @@ In Express.js, you can get data from a request in several ways depending on wher
    });
    ```
 
-2. Query Parameters
+2. Query Parameters: commonly used for GET request
 
    ```js
-   const express = require('express');
+   const express = require('express');  
    const app = express();
 
    app.get('/search', (req, res) => {
@@ -386,7 +390,7 @@ In Express.js, you can get data from a request in several ways depending on wher
    });
    ```
 
-3. Request Body
+3. Request Body: commonly used for POST、PUT、PATCH request
 
    ```js
    const express = require('express');
@@ -420,7 +424,8 @@ Express is a routing and middleware web framework that has minimal functionality
 
 - Node.js backend is a series of middleware function calls
   ![node_express_middleware_series](./assets/images/node_express_middleware_series.jpg)
-- error handling
+- error handling：error middleware接受四个参数，第一个是error，通过next(参数)传入。  
+
   ![node_express_middlewrea_error_handling](./assets/images/node_express_middlewrea_error_handling.jpg)
 - path not found
   - If next() is called, but the next middleware does not exist:
