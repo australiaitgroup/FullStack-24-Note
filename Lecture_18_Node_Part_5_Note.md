@@ -433,15 +433,16 @@ An intermediate collection (junction table) can be used to store the relationshi
 ```
 
 ## 7. Best Practice (Personal Advice)
-
+- An error-free choice for beginner: bi-directional referencing
 - Do embedded if you can (especially one to one),
   - but have to consider
     - will this relation will become one to many in the future
     - will this data need to be access independently
+    - will new relation be added
 - One to couple(less than 10), consider array of embedded docs
 - One to many, consider array of references
 - One to million, consider parent-reference or child reference
-- If read query is much more than write query, go denormalize
+- If read query is much more than write query (10 times), go denormalize
 
 ## 8. Recommend Reading
 
