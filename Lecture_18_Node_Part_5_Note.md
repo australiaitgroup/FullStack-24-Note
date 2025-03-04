@@ -130,6 +130,8 @@ db.[collectionName].insertOne({
 db.[collectionName].insertMany([{ name: 'mason' }, { name: 'James' }]);
 ```
 
+> In MongoDB, _id is the unique identifier for each document. If _id is not manually specified when inserting a document, MongoDB will automatically generate an ObjectId as the _id.
+
 ### 4.2 Reading Documents
 
 To read documents from a collection, you can use methods like `find` and `findOne`.
